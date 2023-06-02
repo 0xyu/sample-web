@@ -66,7 +66,7 @@ const Button = forwardRef((props: {
 
     return (
         <button
-            className={clsx("btn", getBtnColorClassName(color), outline && "_outline", getBtnSizeClassName(size), disabled && "disabled", isLoading && "_loading", className)}
+            className={clsx("btn", _getBtnColorClassName(color), outline && "_outline", _getBtnSizeClassName(size), disabled && "disabled", isLoading && "_loading", className)}
             style={style}
             ref={ref}
             color={color}
@@ -80,12 +80,12 @@ const Button = forwardRef((props: {
 });
 
 const validColors = ["primary", "secondary", "danger", "info", "gray"];
-export const getBtnColorClassName = (color) => {
+const _getBtnColorClassName = (color) => {
     return validColors.includes(color) ? `btn-${color}` : "btn-primary";
 };
 
 const validSizes = ["lg", "sm"];
-export const getBtnSizeClassName = (size) => {
+const _getBtnSizeClassName = (size) => {
     return validSizes.includes(size) ? `btn-${size}` : "";
 };
 

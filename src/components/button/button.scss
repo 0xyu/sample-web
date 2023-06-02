@@ -1,0 +1,41 @@
+.btn {
+    position: relative;
+
+    &._loading:disabled {
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #2a3140;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: ld-flip 2s infinite;
+        }
+    }
+}
+
+@keyframes ld-flip {
+    0%, 25%, 50%, 75%, 100% {
+        animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    0% {
+        transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotateY(180deg) rotateX(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotateY(180deg) rotateX(180deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotateY(0deg) rotateX(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg);
+    }
+}

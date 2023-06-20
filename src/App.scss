@@ -1,5 +1,6 @@
 html, body, #root, .layout {
-    height: 100%;
+    height: calc(100% - 2px);
+    padding: 1px
 }
 
 :root {
@@ -40,4 +41,26 @@ a {
     padding: 0 20px;
     max-width: 1060px;
     margin: auto;
+}
+
+.ani-outline {
+    outline-color: red;
+    animation: .4s highlight;
+
+    &.green {
+        outline-color: green;
+    }
+    &.white {
+        outline-color: white;
+    }
+}
+
+@keyframes highlight {
+    0% {
+        outline: 0;
+    }
+    100% {
+        outline-width: 1px;
+        outline-style: solid;
+    }
 }

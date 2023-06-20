@@ -1,10 +1,12 @@
 import "./footer.scss"
+import Button from "../../components/button/button";
 
-const Footer = () => {
+const Footer = ({onRerenderLayout}) => {
     return (
         <div className={"footer"}>
             <div className={"container-width"}>
-                Copyright @ 2023
+                <span>Copyright @ 2023 </span>
+                <Button onClick={onRerenderLayout}>Rerender Layout</Button>
             </div>
         </div>
     )

@@ -1,8 +1,6 @@
 import React, {forwardRef, useEffect, useRef, useState} from "react";
 import "./button.scss";
 import clsx from 'clsx';
-import Loader from "../loader/loader";
-
 
 type onClickHandler = (event: React.MouseEvent<HTMLElement>) => any
 
@@ -17,7 +15,7 @@ const Button = forwardRef((props: {
     style?: object,
     disabled?: boolean,
     className?: string,
-}, ref) => {
+}, ref: any) => {
     const {
         children,
         onClick,
@@ -39,14 +37,14 @@ const Button = forwardRef((props: {
         };
     }, []);
 
-    const handleClick = async (e) => {
+    const handleClick = async (e: any) => {
         e.preventDefault();
         if (!_isMounted.current) {
             return;
         }
         setIsLoading(true);
         try {
-            await onClick(e);
+            typeof onClick === "function" && await onClick(e);
         } catch (err) {
             throw e;
         } finally {
@@ -56,11 +54,11 @@ const Button = forwardRef((props: {
         }
     };
 
-    const handleMouseEnter = (e) => {
+    const handleMouseEnter = (e: any) => {
         typeof onMouseEnter === "function" && onMouseEnter(e);
     };
 
-    const handleMouseLeave = (e) => {
+    const handleMouseLeave = (e: any) => {
         typeof onMouseLeave === "function" && onMouseLeave(e);
     };
 
@@ -80,12 +78,12 @@ const Button = forwardRef((props: {
 });
 
 const validColors = ["primary", "secondary", "danger", "info", "gray"];
-const _getBtnColorClassName = (color) => {
+const _getBtnColorClassName = (color = "primary") => {
     return validColors.includes(color) ? `btn-${color}` : "btn-primary";
 };
 
-const validSizes = ["lg", "sm"];
-const _getBtnSizeClassName = (size) => {
+const validSizes = ["lg", "md", "sm"];
+const _getBtnSizeClassName = (size = "md") => {
     return validSizes.includes(size) ? `btn-${size}` : "";
 };
 

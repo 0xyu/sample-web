@@ -1,7 +1,7 @@
 import "./footer.scss"
 import Button from "../../components/button/button";
 
-const Footer = ({onRerenderLayout}) => {
+const Footer = ({onRerenderLayout}: { onRerenderLayout: () => any }) => {
     return (
         <div className={"footer"}>
             <div className={"container-width"}>

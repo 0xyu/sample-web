@@ -1,4 +1,4 @@
-const cloneObject = (obj) => {
+const cloneObject = (obj: object) => {
     if (typeof obj === "object") {
         return JSON.parse(JSON.stringify(obj));
     }
@@ -6,7 +6,7 @@ const cloneObject = (obj) => {
     return obj;
 };
 
-const sleep = async (millis: Number) => {
+const sleep = async (millis: number) => {
     return new Promise(resolve => setTimeout(resolve, millis));
 };
 

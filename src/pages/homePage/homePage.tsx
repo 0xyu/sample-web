@@ -74,7 +74,7 @@ const CountRender = () => {
     )
 }
 
-const RenderIfPropChange = ({count2}) => {
+const RenderIfPropChange = ({count2}: { count2: number }) => {
     return (
         <RenderHighlight color={"red"}>
             <div>Only render me if count2 ({count2}) changed</div>

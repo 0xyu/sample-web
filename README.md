@@ -1,5 +1,5 @@
 # sample-web
-- Just some codes write with Vite + Typescript + React + SCSS
+- A simple code written with Vite, TypeScript, React, and SCSS
 - Example to control and highlight rendering components
 
 ## Demo

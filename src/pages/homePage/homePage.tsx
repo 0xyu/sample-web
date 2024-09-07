@@ -30,8 +30,8 @@ const HomePage = (props: any) => {
     return (
         <BasePage {...props}>
             <RenderHighlight>
-                <h3 style={{marginBottom: 5}}>Just a simple code write with Vite + Typescript + React + SCSS</h3>
-                <div style={{color: "#888"}}>Click button to highlight rendering component</div>
+                <h3 style={{marginBottom: 5}}>A simple code written with Vite, TypeScript, React, and SCSS.</h3>
+                <div style={{color: "#888"}}>Click the button to highlight the rendering component.</div>
             </RenderHighlight>
             <br/>
             <div className={"local-state"}>

@@ -1,6 +1,5 @@
 # sample-web
-- A simple code written with Vite, TypeScript, React, and SCSS
-- Example to control and highlight rendering components
-
+- A simple example built with Vite, TypeScript, React, and SCSS to demonstrate techniques to control and highlight component re-rendering.
+  
 ## Demo
 https://0xyu.github.io/

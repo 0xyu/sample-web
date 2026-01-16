@@ -30,8 +30,8 @@ const HomePage = (props: any) => {
     return (
         <BasePage {...props}>
             <RenderHighlight>
-                <h3 style={{marginBottom: 5}}>A simple code written with Vite, TypeScript, React, and SCSS.</h3>
-                <div style={{color: "#888"}}>Click the button to highlight the rendering component.</div>
+                <h3 style={{marginBottom: 5}}>A simple demo built with Vite + TypeScript + React + SCSS.</h3>
+                <div style={{color: "#888"}}>Click the buttons below to highlight component re-rendering. </div>
             </RenderHighlight>
             <br/>
             <div className={"local-state"}>
@@ -64,7 +64,7 @@ const CountRender = () => {
     const [count, setCount] = useState(0);
     return (
         <RenderHighlight>
-            Increase count and render me only ({count})
+            Increase count and render only this component ({count})
             <div>
                 <Button onClick={() => setCount(d => d + 1)} outline={false}>
                     Increase
